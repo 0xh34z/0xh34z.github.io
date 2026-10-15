@@ -1,0 +1,241 @@
+/* DEFAULTS */
+
+* {                                 /* every element */
+    box-sizing: border-box;         /* size includes padding */
+    margin: 0;                      /* no gaps by default */
+    padding: 0;                     /* no gaps by default */
+}
+
+/* PAGE  */
+
+body {                              /* the whole page */
+    font-family: Arial, Helvetica, sans-serif;  /* one simple font */
+    line-height: 1.6;               /* space between lines */
+    color: #000;                    /* black text */
+    background-color: #fff;         /* white background */
+}
+
+/* DARK BARS  */
+
+header,                             /* top bar */
+.external_bar,                      /* HZ links bar */
+footer,                             /* bottom bar */
+th {                                /* table head cells */
+    background-color: #000;         /* black background */
+    color: #fff;                    /* white text */
+}
+
+header,                             /* top bar */
+.external_bar,                      /* HZ links bar */
+footer {                            /* bottom bar */
+    padding: 14px 0;                /* breathing room */
+}
+
+footer {                            /* bottom bar */
+    text-align: center;             /* centred text */
+}
+
+header a,                           /* menu links */
+.external_bar a {                   /* HZ links */
+    color: #fff;                    /* stay white on black */
+}
+
+/* LAYOUT  */
+
+.header_container,                  /* inside top bar */
+.external_container,                /* inside HZ bar */
+main {                              /* page content */
+    max-width: 1000px;              /* readable line length */
+    margin-left: auto;              /* centre it */
+    margin-right: auto;             /* centre it */
+    padding-left: 20px;             /* gap on small screens */
+    padding-right: 20px;            /* gap on small screens */
+}
+
+main {                              /* page content */
+    margin-top: 30px;               /* space under the bars */
+    margin-bottom: 30px;            /* space above the footer */
+}
+
+/* SIDE BY SIDE */
+
+.header_container,                  /* logo + menu */
+.external_container,                /* HZ links */
+nav ul,                             /* menu list */
+.site_branding,                     /* logo + name */
+.profile_card,                      /* photo + text */
+.footer_brand {                     /* footer logo */
+    display: flex;                  /* place next to each other */
+    flex-wrap: wrap;                /* drop to a new line if needed */
+    align-items: center;            /* line up in the middle */
+    gap: 16px;                      /* space between items */
+}
+
+/* LINKS AND MENU */
+
+a {                                 /* all links */
+    color: #000;                    /* black */
+}
+
+nav ul {                            /* menu list */
+    list-style: none;               /* no bullets */
+    padding: 0;                     /* no indent */
+}
+
+nav a {                             /* menu link */
+    display: inline-block;          /* padding works on links */
+    padding: 6px 12px;              /* clickable box */
+    text-decoration: none;          /* no underline */
+    font-weight: bold;              /* easy to read */
+}
+
+nav a:hover,                        /* mouse on link */
+nav a.active {                      /* page you are on */
+    background-color: #000;         /* black box */
+    color: #fff;                    /* white text */
+}
+
+/* CONTENT BOXES */
+
+.card,                              /* main block on a page */
+.blog_item {                        /* one blog post */
+    background-color: #fff;         /* white inside */
+    border: 2px solid #000;         /* black outline */
+    padding: 20px;                  /* space inside */
+    margin-bottom: 20px;            /* space between boxes */
+}
+
+.blog_item {                        /* one blog post */
+    border-left: 8px solid #000;    /* thick black accent */
+}
+
+/* COLUMNS */
+
+.grid_two {                         /* two column section */
+    display: grid;                  /* grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* wraps to 1 column */
+    gap: 20px;                      /* space between boxes */
+    margin-bottom: 20px;            /* space under the grid */
+}
+
+/* TABLES */
+
+.table_wrapper {                    /* scrolls table on small screens */
+    overflow-x: auto;               /* sideways scroll, no squish */
+}
+
+table {                             /* every table */
+    width: 100%;                    /* fill the page */
+    min-width: 560px;               /* keep columns readable, scroll instead */
+    border-collapse: collapse;      /* single clean border */
+    border: 2px solid #000;         /* black outline */
+    margin: 20px 0;                 /* space above and below */
+}
+
+th,                                 /* head cells */
+td {                                /* body cells */
+    border: 1px solid #000;         /* black lines */
+    padding: 8px 12px;              /* space inside cells */
+    text-align: left;               /* text on the left */
+}
+
+tr.pass td {                        /* passed course: green */
+    background-color: #d4edda;      /* light green */
+}
+
+tr.fail td {                        /* failed course: red */
+    background-color: #f8d7da;      /* light red */
+}
+
+tr.pending td {                     /* not completed yet: grey */
+    background-color: #e9e9e9;      /* light grey */
+}
+
+/* PROFILE PHOTO */
+
+.avatar {                           /* profile picture */
+    width: 120px;                   /* square size */
+    height: 120px;                  /* square size */
+    border-radius: 50%;             /* makes it a circle */
+    object-fit: cover;              /* crop, do not stretch */
+    border: 2px solid #000;         /* black outline */
+}
+
+/* PROGRESS BAR */
+
+.meter_wrapper {                    /* wraps bar + labels */
+    margin: 20px 0;                 /* space around it */
+}
+
+.meter_track {                      /* empty bar */
+    position: relative;             /* marker sits inside the bar */
+    height: 24px;                   /* bar thickness */
+    background-color: #fff;         /* white background */
+    border: 2px solid #000;         /* black border */
+}
+
+.meter_fill {                       /* filled part of bar */
+    height: 100%;                   /* full height of the bar */
+    width: 0%;                      /* default width, JS sets it */
+    background-color: #000;         /* black fill */
+}
+
+.meter_marker {                     /* 45 EC study advice line */
+    position: absolute;             /* placed over the bar */
+    top: -4px;                      /* slightly extends above */
+    bottom: -4px;                   /* slightly extends below */
+    left: 75%;                      /* 45 of 60 EC */
+    width: 3px;                     /* marker line thickness */
+    background-color: #000;         /* black line */
+}
+
+.meter_labels {                     /* numbers under the bar */
+    display: flex;                  /* spread across the bar */
+    flex-wrap: wrap;                /* stack on small screens */
+    justify-content: space-between; /* left, middle, right */
+    gap: 8px;                       /* space when stacked */
+    font-size: 14px;                /* small text */
+    margin-top: 8px;                /* space under bar */
+}
+
+/* TEXT AND LOGOS */
+
+p,                                 /* paragraphs */
+li {                                /* list items */
+    margin-bottom: 10px;            /* space between lines */
+}
+
+ul,                                 /* bullet lists */
+ol {                                /* numbered lists */
+    padding-left: 24px;             /* indent the list */
+}
+
+h1,                                 /* page title */
+h2,                                 /* section title */
+h3 {                                /* box title */
+    margin-bottom: 10px;            /* space under the title */
+}
+
+.site_title {                       /* your name in the header */
+    font-size: 20px;                /* title size */
+}
+
+.site_title,                        /* your name */
+.external_label {                   /* "HZ Links:" text */
+    font-weight: bold;              /* bold text */
+}
+
+.external_bar,                      /* HZ links bar */
+.blog_meta {                        /* date under a blog title */
+    font-size: 14px;                /* small text */
+}
+
+.header_logo {                      /* logo in the header */
+    height: 40px;                   /* fixed height */
+    width: auto;                    /* keep proportions */
+}
+
+.footer_logo {                      /* logo in the footer */
+    height: 32px;                   /* fixed height */
+    width: auto;                    /* keep proportions */
+}

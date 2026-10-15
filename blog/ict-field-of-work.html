@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Digital forensics and IT work experience at Politie Zeeland.">
+    <title>The ICT Field of Work | Kasper van de Kimmenade</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <aside class="external_bar">
+        <div class="external_container">
+            <span class="external_label">HZ Links:</span>
+            <a href="https://learn.hz.nl" target="_blank" rel="noopener noreferrer">HZ Learn</a>
+            <a href="https://hz.nl/en/organisation/regulations-documents" target="_blank" rel="noopener noreferrer">HZ Regulations (CER)</a>
+            <a href="../data/ir-b-ft-ict.pdf">Implementation Regulations (IR)</a>
+            <a href="https://hz.osiris-student.nl" target="_blank" rel="noopener noreferrer">Osiris Progress</a>
+            <a href="https://github.com/HZ-HBO-ICT" target="_blank" rel="noopener noreferrer">HZ GitHub</a>
+        </div>
+    </aside>
+
+    <header>
+        <div class="header_container">
+            <a href="../index.html" class="site_branding">
+                <img src="../img/hz-logo.svg"
+                     alt="HZ University of Applied Sciences shield logo"
+                     width="36"
+                     height="36"
+                     class="header_logo">
+                <span class="site_title">Kasper van de Kimmenade</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../profile.html">Profile</a></li>
+                    <li><a href="../why-it.html">Why IT</a></li>
+                    <li><a href="../direction.html">Direction</a></li>
+                    <li><a href="../dashboard.html">Dashboard</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="card">
+            <h1>The ICT Field of Work: Digital Forensics at Politie Zeeland</h1>
+            <div class="blog_meta">15-10-2026 by Kasper van de Kimmenade</div>
+
+            <p>From August 2025 to January 2026, I did my MBO internship at Politie Zeeland in the digital forensics unit (Digitaal Opsporen). This gave me an inside look at how IT works in law enforcement.</p>
+
+            <h2>The Problem with Phone Dumps</h2>
+            <p>When the police seize a phone, they pull huge amounts of data from it using tools like Cellebrite or Graykey and more. For investigators doing deep database research (because GUIs do exist), going through that mountain of data is slow and messy. Apple and Android use completely different timestamp formats, GPS coordinates are just raw numbers instead of place names, and the existing software gets cluttered quickly.</p>
+
+            <h2>Building the AI Query Tool</h2>
+            <p>I built a proof of concept tool that lets investigators search through SQLite database dumps using normal language, like asking for photos taken in Middelburg during a certain month. The backend converted timestamps between iOS and Android formats, translated GPS coordinates into city names using Nominatim, and used an async FastAPI backend connected to Ollama and OpenWebUI.</p>
+
+            <h2>Real World Rules</h2>
+            <p>Working with forensic evidence taught me that legal requirements matter as much as the code itself. The tool had to use strictly read-only database connections so evidence was never altered, everything had to be logged, and real case data could never leave an isolated local network. It showed me how critical reliable backend engineering is in the public sector.</p>
+
+
+            <p><a href="https://kaspervandekimmenade.nl/posts/AI-database-investigator/">Read more here!</a></p>
+            <p><a href="../blog.html">Back to Blog Overview</a></p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer_brand">
+            <img src="../img/hz-university-of-applied-sciences.svg"
+                 alt="HZ University of Applied Sciences wordmark logo"
+                 width="160"
+                 height="40"
+                 class="footer_logo">
+        </div>
+        <p>Kasper van de Kimmenade | HZ HBO ICT</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Study progress monitor and credit dashboard for Kasper van de Kimmenade at HZ HBO ICT.">
+    <title>Dashboard | Kasper van de Kimmenade</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <aside class="external_bar">
+        <div class="external_container">
+            <span class="external_label">HZ Links:</span>
+            <a href="https://learn.hz.nl" target="_blank" rel="noopener noreferrer">HZ Learn</a>
+            <a href="https://hz.nl/en/organisation/regulations-documents" target="_blank" rel="noopener noreferrer">HZ Regulations (CER)</a>
+            <a href="data/ir-b-ft-ict.pdf">Implementation Regulations (IR)</a>
+            <a href="https://hz.osiris-student.nl" target="_blank" rel="noopener noreferrer">Osiris Progress</a>
+            <a href="https://github.com/HZ-HBO-ICT" target="_blank" rel="noopener noreferrer">HZ GitHub</a>
+        </div>
+    </aside>
+
+    <header>
+        <div class="header_container">
+            <a href="index.html" class="site_branding">
+                <img src="img/hz-logo.svg"
+                     alt="HZ University of Applied Sciences shield logo"
+                     width="36"
+                     height="36"
+                     class="header_logo">
+                <span class="site_title">Kasper van de Kimmenade</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="why-it.html">Why IT</a></li>
+                    <li><a href="direction.html">Direction</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="card">
+            <h1>Study Monitor and Credit Dashboard</h1>
+            <p>This dashboard tracks my first year academic progress at HZ according to the
+                <a href="data/ir-b-ft-ict.pdf">Implementation Regulations</a> (B ICT, 2026-2027).</p>
+        </section>
+
+        <section class="card">
+            <h2>Completeness Meter</h2>
+            <p>Progress towards the sixty European Credit total and the forty five credit Binding
+                Study Advice boundary:</p>
+
+            <div class="meter_wrapper">
+                <div class="meter_track">
+                    <div id="meter_fill" class="meter_fill"></div>
+                    <div class="meter_marker" title="Study Advice Boundary: 45 EC (75%)"></div>
+                </div>
+                <div class="meter_labels">
+                    <span><strong><span id="ec_obtained">0</span> / 60 EC</strong> (<span id="ec_percent">0%</span>)</span>
+                    <span id="bsa_message">45 EC needed for BSA</span>
+                    <span>BSA Boundary: 45 EC (75%)</span>
+                </div>
+            </div>
+
+            <p>Green row: passed (5.5 or higher, EC awarded). Red row: failed, resit required. Grey row: Pending, no grade yet.</p>
+        </section>
+
+        <section class="card">
+            <h2>Course Overview Table</h2>
+            <div class="table_wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quarter</th>
+                        <th>Course</th>
+                        <th>EC</th>
+                        <th>Exam Form</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="course_table_body">
+                    <tr>
+                        <td colspan="5">Loading course progress...</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer_brand">
+            <img src="img/hz-university-of-applied-sciences.svg"
+                 alt="HZ University of Applied Sciences wordmark logo"
+                 width="160"
+                 height="40"
+                 class="footer_logo">
+        </div>
+        <p>Kasper van de Kimmenade | HZ HBO ICT</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
